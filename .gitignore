@@ -1,0 +1,8 @@
+# Keep the plugin + notes; drop heavy reference media
+fwjelaa vault/**/*.png
+fwjelaa vault/**/*.jpg
+fwjelaa vault/**/*.jpeg
+fwjelaa vault/**/*.webp
+fwjelaa vault/**/*.gif
+fwjelaa vault/**/*.mp4
+.obsidian/workspace*.json

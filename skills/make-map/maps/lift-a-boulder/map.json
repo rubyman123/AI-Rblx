@@ -1,0 +1,81 @@
+{
+  "id": "lift-a-boulder",
+  "title": "Lift a Boulder",
+  "family": "simulator",
+  "seed": 7,
+  "lighting": "simulator",
+  "floorY": -30,
+  "spawn": [0, 3, 124],
+  "plazaZ": [140, 106],
+  "pathWidth": 14,
+  "rampLength": 12,
+  "gateHeight": 12,
+  "earth": "#694028",
+  "island": {"halfX": 120, "maxZ": 140, "minZ": -140, "thickness": 10},
+  "beach": {"width": 10, "top": -1, "color": "#F0D5A0"},
+  "water": {"color": "#0D69AC", "transparency": 0.3, "reflectance": 0.15, "waveSize": 0.08, "waveSpeed": 8,
+            "size": 700, "farColor": "#0D69AC"},
+  "zones": [
+    {"name": "MEADOW", "z": [140, 60], "y": 0, "ground": "#5B9A4C", "path": "#F0D5A0", "rock": "#A9A8AB",
+     "trim": "#635F62", "accent": "#0D69AC", "neon": "#00FFFF", "arrow": "#0D69AC", "gate": false,
+     "pad": [20, 100], "rocks": [[1.5, -18, 100], [2, 19, 86], [2.5, -18, 78]],
+     "decor": [
+       {"prop": "boulder", "spacing": 60, "clearance": 18, "opts": {"radius": 15, "squash": 0.22, "color": "#4B974B"}},
+       {"prop": "tree", "clusters": [42, 11, 3, 5, 9], "clearance": 5},
+       {"prop": "bush", "spacing": 18, "clearance": 3},
+       {"prop": "flower", "clusters": [24, 5, 4, 7, 1.6]},
+       {"prop": "rock", "spacing": 48, "clearance": 3, "opts": {"color": "#A9A8AB"}}
+     ]},
+    {"name": "DESERT", "z": [60, -5], "y": 3, "ground": "#D7C59A", "path": "#958A73", "rock": "#CC8E69",
+     "trim": "#AE7A59", "accent": "#DA8541", "neon": "#FFB000", "arrow": "#F8F8F8",
+     "pad": [21, 46], "rocks": [[3, -20, 46], [3.5, 22, 30], [4, -21, 16]],
+     "decor": [
+       {"prop": "boulder", "spacing": 55, "clearance": 16, "opts": {"radius": 13, "squash": 0.28, "color": "#E0CFA5"}},
+       {"prop": "cactus", "spacing": 24, "clearance": 3},
+       {"prop": "rock", "spacing": 34, "clearance": 3, "opts": {"color": "#CC8E69", "dark": "#AE7A59"}}
+     ]},
+    {"name": "SNOW", "z": [-5, -70], "y": 6, "ground": "#F8F8F8", "path": "#80BBDB", "rock": "#635F62",
+     "trim": "#4A4749", "accent": "#0989CF", "neon": "#04AFEC", "arrow": "#0D69AC",
+     "pad": [22, -19], "rocks": [[4.5, -22, -19], [5, 24, -35], [5.5, -23, -50]],
+     "decor": [
+       {"prop": "boulder", "spacing": 60, "clearance": 17, "opts": {"radius": 14, "squash": 0.25, "color": "#EDEAEA"}},
+       {"prop": "pine", "clusters": [34, 12, 3, 6, 8], "clearance": 6, "opts": {"snow": true}},
+       {"prop": "boulder", "spacing": 40, "clearance": 4, "opts": {"radius": 3, "color": "#AFDDFF"}},
+       {"prop": "rock", "spacing": 50, "clearance": 3, "opts": {"color": "#635F62", "dark": "#4A4749"}}
+     ]},
+    {"name": "VOLCANO", "z": [-70, -140], "y": 9, "ground": "#4A4749", "path": "#562424", "rock": "#750000",
+     "trim": "#2A2627", "accent": "#FFB000", "neon": "#D5733D", "arrow": "#FFB000",
+     "pad": [20, -78], "rocks": [[6, -26, -84], [7, 32, -86], [8, -44, -92]],
+     "decor": [
+       {"prop": "boulder", "spacing": 60, "clearance": 15, "opts": {"radius": 12, "squash": 0.3, "color": "#635F62"}},
+       {"prop": "deadTree", "spacing": 28, "clearance": 3},
+       {"prop": "boulder", "spacing": 32, "clearance": 4, "opts": {"radius": 3.5, "color": "#2A2627"}}
+     ]}
+  ],
+  "boulder": {"pos": [0, 0, -124], "radius": 19, "squash": 0.85, "detail": 1, "color": "#F5CD30", "ring": 15,
+              "title": "GOLDEN BOULDER",
+              "cliffRocks": [[-27, -104], [-19, -105], [20, -105], [28, -104], [31, -114], [-31, -120], [30, -132]],
+              "plateau": 16, "plateauFront": -104, "plateauWidth": 60},
+  "volcano": {"pos": [-80, -112], "radius": 28, "topRadius": 8, "height": 46},
+  "lava": [[[-58, -100], [-72, -84], [-112, -78]], [[-62, -126], [-92, -136]], [[60, -104], [78, -118], [104, -122]]],
+  "pois": [
+    {"name": "meadow pad", "pos": [20, 1, 100]},
+    {"name": "desert gate", "pos": [0, 4, 52]},
+    {"name": "desert pad", "pos": [21, 4, 46]},
+    {"name": "snow gate", "pos": [0, 7, -13]},
+    {"name": "snow pad", "pos": [22, 7, -19]},
+    {"name": "volcano gate", "pos": [0, 10, -78]},
+    {"name": "volcano pad", "pos": [20, 10, -78]},
+    {"name": "boulder plateau", "pos": [-20, 26, -108]}
+  ],
+  "shots": [
+    {"name": "spawn_view", "cam": [0, 9, 132], "look": [0, 12, 0]},
+    {"name": "hero", "cam": [150, 95, 165], "look": [0, 0, -15]},
+    {"name": "meadow_eye", "cam": [30, 8, 96], "look": [-25, 4, 74]},
+    {"name": "desert_eye", "cam": [0, 12, 46], "look": [34, 5, 18]},
+    {"name": "snow_eye", "cam": [0, 15, -16], "look": [-32, 7, -52]},
+    {"name": "volcano_eye", "cam": [16, 18, -80], "look": [0, 32, -122]},
+    {"name": "top_down", "cam": [0, 420, 1], "look": [0, 0, 0]},
+    {"name": "boulder_low", "cam": [-28, 22, -92], "look": [0, 34, -122]}
+  ]
+}

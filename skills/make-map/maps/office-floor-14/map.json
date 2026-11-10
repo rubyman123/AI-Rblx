@@ -1,0 +1,1972 @@
+{
+ "id": "office-floor-14",
+ "title": "Office Floor 14 (Halloway & Kane, 2 a.m.)",
+ "family": "custom (nearest: horror-house)",
+ "seed": 14,
+ "lighting": "night",
+ "floorY": -400,
+ "spawn": [
+  0,
+  3,
+  31
+ ],
+ "agent": {
+  "radius": 1.25,
+  "height": 5.5
+ },
+ "company": "HALLOWAY & KANE",
+ "materials": {
+  "carpet": "ofc_carpet",
+  "ceiling": "ofc_ceiling",
+  "wall": "ofc_wall",
+  "wall_damaged": "ofc_wall_damaged",
+  "cubicle": "ofc_cubicle",
+  "upholstery": "ofc_upholstery",
+  "lobby_floor": "ofc_lobby_floor",
+  "marble": "ofc_marble",
+  "walnut": "ofc_walnut",
+  "oak": "ofc_oak",
+  "steel": "ofc_steel",
+  "paint_metal": "ofc_paint_metal",
+  "alu": "ofc_alu",
+  "terrazzo": "ofc_terrazzo",
+  "concrete": "ofc_concrete",
+  "plastic_black": "ofc_plastic_black",
+  "plastic_white": "ofc_plastic_white",
+  "tiles_white": "ofc_tiles_white",
+  "raised_floor": "ofc_raised_floor",
+  "leather": "ofc_leather"
+ },
+ "tints": {
+  "carpet": "#7C828C",
+  "ceiling": "#D6D4CE",
+  "wall": "#C7C1B6",
+  "wall_damaged": "#C2BBAE",
+  "cubicle": "#7E8794",
+  "oak": "#D8C9AE",
+  "terrazzo": "#D2CEC6",
+  "concrete": "#B9B7B2",
+  "paint_metal": "#6A6E73",
+  "carpet_manager": "#8E8579"
+ },
+ "plate": {
+  "x0": -56,
+  "x1": 56,
+  "z0": -44,
+  "z1": 36,
+  "ceil": 10,
+  "slab": 1
+ },
+ "zones": [
+  {
+   "name": "lobby",
+   "rect": [
+    -12,
+    18,
+    12,
+    36
+   ],
+   "floor": "lobby_floor",
+   "ceiling": "plaster"
+  },
+  {
+   "name": "reception",
+   "rect": [
+    -12,
+    4,
+    12,
+    18
+   ],
+   "floor": "lobby_floor",
+   "ceiling": "tiles"
+  },
+  {
+   "name": "stair",
+   "rect": [
+    -56,
+    18,
+    -44,
+    36
+   ],
+   "floor": "none",
+   "ceiling": "none"
+  },
+  {
+   "name": "server",
+   "rect": [
+    -44,
+    18,
+    -24,
+    36
+   ],
+   "floor": "raised_floor",
+   "ceiling": "tiles"
+  },
+  {
+   "name": "copy",
+   "rect": [
+    -24,
+    18,
+    -12,
+    36
+   ],
+   "floor": "terrazzo",
+   "ceiling": "tiles"
+  },
+  {
+   "name": "break",
+   "rect": [
+    12,
+    18,
+    36,
+    36
+   ],
+   "floor": "terrazzo",
+   "ceiling": "tiles"
+  },
+  {
+   "name": "storage",
+   "rect": [
+    36,
+    18,
+    56,
+    36
+   ],
+   "floor": "concrete",
+   "ceiling": "tiles"
+  },
+  {
+   "name": "manager",
+   "rect": [
+    -56,
+    -44,
+    -36,
+    -28
+   ],
+   "floor": "carpet",
+   "tint": "carpet_manager",
+   "ceiling": "tiles"
+  },
+  {
+   "name": "conference",
+   "rect": [
+    -36,
+    -44,
+    -14,
+    -28
+   ],
+   "floor": "carpet",
+   "ceiling": "tiles"
+  }
+ ],
+ "walls": [
+  {
+   "a": [
+    -56,
+    18
+   ],
+   "b": [
+    -12,
+    18
+   ],
+   "open": [
+    [
+     "d",
+     6
+    ],
+    [
+     "d",
+     20
+    ],
+    [
+     "d",
+     38
+    ]
+   ]
+  },
+  {
+   "a": [
+    12,
+    18
+   ],
+   "b": [
+    56,
+    18
+   ],
+   "open": [
+    [
+     "gap",
+     12,
+     6,
+     8.5
+    ],
+    [
+     "d",
+     34
+    ]
+   ]
+  },
+  {
+   "a": [
+    -44,
+    18
+   ],
+   "b": [
+    -44,
+    36
+   ]
+  },
+  {
+   "a": [
+    -24,
+    18
+   ],
+   "b": [
+    -24,
+    36
+   ]
+  },
+  {
+   "a": [
+    -12,
+    18
+   ],
+   "b": [
+    -12,
+    36
+   ]
+  },
+  {
+   "a": [
+    12,
+    18
+   ],
+   "b": [
+    12,
+    36
+   ]
+  },
+  {
+   "a": [
+    36,
+    18
+   ],
+   "b": [
+    36,
+    36
+   ],
+   "mat2": "wall_damaged"
+  },
+  {
+   "a": [
+    -56,
+    36
+   ],
+   "b": [
+    56,
+    36
+   ],
+   "t": 1,
+   "open": [
+    [
+     "gap",
+     51,
+     4.4,
+     8
+    ],
+    [
+     "gap",
+     61,
+     4.4,
+     8
+    ]
+   ]
+  },
+  {
+   "a": [
+    -56,
+    18
+   ],
+   "b": [
+    -56,
+    36
+   ],
+   "t": 1
+  },
+  {
+   "a": [
+    56,
+    18
+   ],
+   "b": [
+    56,
+    36
+   ],
+   "t": 1,
+   "mat": "wall_damaged"
+  },
+  {
+   "a": [
+    -36,
+    -44
+   ],
+   "b": [
+    -36,
+    -28
+   ]
+  },
+  {
+   "a": [
+    -56,
+    -28
+   ],
+   "b": [
+    -36,
+    -28
+   ],
+   "open": [
+    [
+     "d",
+     15
+    ]
+   ]
+  },
+  {
+   "a": [
+    -36,
+    -28
+   ],
+   "b": [
+    -14,
+    -28
+   ],
+   "glass": true,
+   "open": [
+    [
+     "d",
+     17
+    ]
+   ]
+  },
+  {
+   "a": [
+    -14,
+    -28
+   ],
+   "b": [
+    -14,
+    -44
+   ],
+   "glass": true
+  },
+  {
+   "a": [
+    -8,
+    3
+   ],
+   "b": [
+    8,
+    3
+   ],
+   "t": 1.2,
+   "mat": "walnut"
+  },
+  {
+   "a": [
+    -12,
+    18
+   ],
+   "b": [
+    12,
+    18
+   ],
+   "glass": true,
+   "open": [
+    [
+     "gap",
+     12,
+     7,
+     8
+    ]
+   ]
+  }
+ ],
+ "door": {
+  "width": 4.6,
+  "height": 7.5
+ },
+ "doors": [
+  {
+   "name": "StairDoor",
+   "c": [
+    -50,
+    18
+   ],
+   "axis": "x",
+   "hinge": -1,
+   "open": 86,
+   "style": "steel",
+   "push": true
+  },
+  {
+   "name": "ServerDoor",
+   "c": [
+    -36,
+    18
+   ],
+   "axis": "x",
+   "hinge": 1,
+   "open": 70,
+   "style": "steel",
+   "vision": true
+  },
+  {
+   "name": "CopyDoor",
+   "c": [
+    -18,
+    18
+   ],
+   "axis": "x",
+   "hinge": 1,
+   "open": 95,
+   "style": "wood"
+  },
+  {
+   "name": "StorageDoor",
+   "c": [
+    46,
+    18
+   ],
+   "axis": "x",
+   "hinge": -1,
+   "open": 82,
+   "style": "steel"
+  },
+  {
+   "name": "ManagerDoor",
+   "c": [
+    -41,
+    -28
+   ],
+   "axis": "x",
+   "hinge": 1,
+   "open": -100,
+   "style": "wood"
+  },
+  {
+   "name": "ConferenceDoor",
+   "c": [
+    -19,
+    -28
+   ],
+   "axis": "x",
+   "hinge": 1,
+   "open": -90,
+   "style": "glass"
+  }
+ ],
+ "columns": [
+  [
+   -36,
+   -28
+  ],
+  [
+   -14,
+   -28
+  ],
+  [
+   12,
+   -26
+  ],
+  [
+   33,
+   -26
+  ],
+  [
+   12,
+   10
+  ],
+  [
+   33,
+   10
+  ],
+  [
+   -34,
+   14
+  ]
+ ],
+ "facade": {
+  "bay": 5.6,
+  "sill": 1.8,
+  "head": 10,
+  "sides": [
+   {
+    "name": "north",
+    "a": [
+     -56,
+     -44
+    ],
+    "b": [
+     56,
+     -44
+    ],
+    "out": [
+     0,
+     -1
+    ]
+   },
+   {
+    "name": "west",
+    "a": [
+     -56,
+     18
+    ],
+    "b": [
+     -56,
+     -44
+    ],
+    "out": [
+     -1,
+     0
+    ]
+   },
+   {
+    "name": "east",
+    "a": [
+     56,
+     -44
+    ],
+    "b": [
+     56,
+     18
+    ],
+    "out": [
+     1,
+     0
+    ]
+   }
+  ]
+ },
+ "stair": {
+  "x0": -56,
+  "x1": -44,
+  "z0": 18,
+  "z1": 36,
+  "spine": [
+   -50.2,
+   -49.8
+  ],
+  "landing": 23,
+  "mid": 30.65,
+  "rise": 6.4,
+  "steps": 9,
+  "bottom": -14,
+  "top": 21
+ },
+ "pods": [
+  [
+   24,
+   -32
+  ],
+  [
+   42,
+   -32
+  ],
+  [
+   24,
+   -16
+  ],
+  [
+   42,
+   -16
+  ],
+  [
+   24,
+   0
+  ],
+  [
+   42,
+   0
+  ],
+  [
+   0,
+   -32
+  ],
+  [
+   0,
+   -17
+  ]
+ ],
+ "cubicles": [
+  {
+   "x0": -50,
+   "z0": -22,
+   "cols": 2,
+   "rows": 4,
+   "cell": 7
+  },
+  {
+   "x0": -30,
+   "z0": -22,
+   "cols": 2,
+   "rows": 4,
+   "cell": 7
+  }
+ ],
+ "panelHeight": 5.5,
+ "lightPools": [
+  {
+   "at": [
+    44,
+    -38
+   ],
+   "r": 9,
+   "state": "lit"
+  },
+  {
+   "at": [
+    28,
+    -14
+   ],
+   "r": 4,
+   "state": "flicker"
+  },
+  {
+   "at": [
+    -44,
+    -10
+   ],
+   "r": 4,
+   "state": "flicker"
+  },
+  {
+   "at": [
+    -20,
+    6
+   ],
+   "r": 4,
+   "state": "lit"
+  },
+  {
+   "at": [
+    -50,
+    12
+   ],
+   "r": 5,
+   "state": "lit"
+  },
+  {
+   "at": [
+    24,
+    27
+   ],
+   "r": 8,
+   "state": "lit"
+  },
+  {
+   "at": [
+    -18,
+    26
+   ],
+   "r": 4,
+   "state": "flicker"
+  },
+  {
+   "at": [
+    -36,
+    31
+   ],
+   "r": 3,
+   "state": "lit"
+  },
+  {
+   "at": [
+    4,
+    -26
+   ],
+   "r": 4,
+   "state": "flicker"
+  },
+  {
+   "at": [
+    50,
+    8
+   ],
+   "r": 4,
+   "state": "lit"
+  },
+  {
+   "at": [
+    -25,
+    -36
+   ],
+   "r": 4.5,
+   "state": "flicker"
+  }
+ ],
+ "props": [
+  {
+   "m": "ofc_sofa",
+   "p": [
+    -10.1,
+    0,
+    26
+   ],
+   "r": -90
+  },
+  {
+   "m": "ofc_coffee_table",
+   "p": [
+    -6.6,
+    0,
+    26
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_lounge_chair",
+   "p": [
+    -6.4,
+    0,
+    31
+   ],
+   "r": 145
+  },
+  {
+   "m": "ofc_plant_a",
+   "p": [
+    -10.4,
+    0,
+    33.6
+   ],
+   "r": 20
+  },
+  {
+   "m": "ofc_plant_a",
+   "p": [
+    10.3,
+    0,
+    20.2
+   ],
+   "r": 140
+  },
+  {
+   "m": "ofc_side_table",
+   "p": [
+    -10.3,
+    0,
+    21.4
+   ],
+   "r": 90
+  },
+  {
+   "m": "ofc_vase",
+   "p": [
+    -10.3,
+    1.967,
+    21.4
+   ],
+   "r": 0,
+   "c": "none"
+  },
+  {
+   "m": "ofc_wet_floor",
+   "p": [
+    8.2,
+    0,
+    31.6
+   ],
+   "r": 200
+  },
+  {
+   "m": "ofc_cctv",
+   "p": [
+    11.2,
+    9.1,
+    19.0
+   ],
+   "r": -125,
+   "c": "none"
+  },
+  {
+   "m": "ofc_desk_lamp",
+   "p": [
+    -3.6,
+    2.68,
+    9.2
+   ],
+   "r": 160,
+   "s": false
+  },
+  {
+   "m": "ofc_crt",
+   "p": [
+    3.4,
+    2.68,
+    9.0
+   ],
+   "r": 195
+  },
+  {
+   "m": "ofc_binder",
+   "p": [
+    -1.2,
+    3.98,
+    10.6
+   ],
+   "r": 180
+  },
+  {
+   "m": "ofc_cactus",
+   "p": [
+    4.3,
+    3.98,
+    10.5
+   ],
+   "r": 30
+  },
+  {
+   "m": "ofc_stationery",
+   "p": [
+    -2.4,
+    2.68,
+    8.6
+   ],
+   "r": 10
+  },
+  {
+   "m": "ofc_task_chair",
+   "p": [
+    0.9,
+    0,
+    6.4
+   ],
+   "r": 205
+  },
+  {
+   "m": "ofc_plant_b",
+   "p": [
+    -10.6,
+    0,
+    5.2
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_plant_b",
+   "p": [
+    10.6,
+    0,
+    5.4
+   ],
+   "r": 90
+  },
+  {
+   "m": "ofc_credenza",
+   "p": [
+    -46,
+    0,
+    -41.62
+   ],
+   "r": 180
+  },
+  {
+   "m": "ofc_task_chair",
+   "p": [
+    -46.2,
+    0,
+    -39.7
+   ],
+   "r": 8,
+   "name": "ManagerChair"
+  },
+  {
+   "m": "ofc_lounge_chair",
+   "p": [
+    -52.4,
+    0,
+    -32.4
+   ],
+   "r": -56
+  },
+  {
+   "m": "ofc_desk_lamp",
+   "p": [
+    -49.6,
+    2.78,
+    -38.6
+   ],
+   "r": -150,
+   "s": false
+  },
+  {
+   "m": "ofc_laptop",
+   "p": [
+    -46.2,
+    2.78,
+    -38.4
+   ],
+   "r": 180
+  },
+  {
+   "m": "ofc_photo",
+   "p": [
+    -43.2,
+    2.78,
+    -39.2
+   ],
+   "r": 100
+  },
+  {
+   "m": "ofc_stationery",
+   "p": [
+    -44.1,
+    2.78,
+    -37.4
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_notepads",
+   "p": [
+    -47.6,
+    2.78,
+    -36.9
+   ],
+   "r": 12
+  },
+  {
+   "m": "ofc_mug",
+   "p": [
+    -44.6,
+    2.78,
+    -38.9
+   ],
+   "r": 40
+  },
+  {
+   "m": "ofc_desk_phone",
+   "p": [
+    -42.8,
+    2.78,
+    -37.9
+   ],
+   "r": 200
+  },
+  {
+   "m": "ofc_shelves",
+   "p": [
+    -36.9,
+    0,
+    -32.2
+   ],
+   "r": 90,
+   "sc": 0.0838
+  },
+  {
+   "m": "ofc_shelves",
+   "p": [
+    -36.9,
+    0,
+    -38.0
+   ],
+   "r": 90,
+   "sc": 0.0838
+  },
+  {
+   "m": "ofc_plant_a",
+   "p": [
+    -54.2,
+    0,
+    -30.2
+   ],
+   "r": 60
+  },
+  {
+   "m": "ofc_clock",
+   "p": [
+    -46,
+    7.4,
+    -28.32
+   ],
+   "r": 180,
+   "c": "none"
+  },
+  {
+   "m": "ofc_frame_a",
+   "p": [
+    -51.5,
+    3.6,
+    -28.32
+   ],
+   "r": 180,
+   "c": "none"
+  },
+  {
+   "m": "ofc_frame_b",
+   "p": [
+    -38.4,
+    4.0,
+    -28.32
+   ],
+   "r": 180,
+   "c": "none"
+  },
+  {
+   "m": "ofc_conf_table",
+   "p": [
+    -25,
+    0,
+    -37.3
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_notepads",
+   "p": [
+    -27.6,
+    2.6,
+    -37.4
+   ],
+   "r": 80
+  },
+  {
+   "m": "ofc_clipboard",
+   "p": [
+    -21.4,
+    2.6,
+    -36.4
+   ],
+   "r": 20
+  },
+  {
+   "m": "ofc_plant_b",
+   "p": [
+    -34.6,
+    0,
+    -42.6
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_clock",
+   "p": [
+    -25,
+    7.6,
+    -28.3
+   ],
+   "r": 180,
+   "c": "none"
+  },
+  {
+   "m": "ofc_fridge",
+   "p": [
+    29.7,
+    0,
+    34.0
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_microwave",
+   "p": [
+    24.6,
+    3.2,
+    34.3
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_coffee",
+   "p": [
+    21.4,
+    3.2,
+    34.4
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_kettle",
+   "p": [
+    15.2,
+    3.2,
+    34.6
+   ],
+   "r": 15
+  },
+  {
+   "m": "ofc_mug",
+   "p": [
+    16.4,
+    3.2,
+    34.2
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_mug",
+   "p": [
+    22.6,
+    3.2,
+    33.9
+   ],
+   "r": 60
+  },
+  {
+   "m": "ofc_vending",
+   "p": [
+    34.1,
+    0,
+    22.6
+   ],
+   "r": 90
+  },
+  {
+   "m": "ofc_water_cooler",
+   "p": [
+    34.9,
+    0,
+    29.4
+   ],
+   "r": 90
+  },
+  {
+   "m": "ofc_crt",
+   "p": [
+    13.2,
+    6.6,
+    19.3
+   ],
+   "r": -40,
+   "name": "BreakTV"
+  },
+  {
+   "m": "ofc_first_aid",
+   "p": [
+    12.3,
+    4.4,
+    31.0
+   ],
+   "r": -90,
+   "c": "none"
+  },
+  {
+   "m": "ofc_clock",
+   "p": [
+    24,
+    7.6,
+    18.32
+   ],
+   "r": 0,
+   "c": "none"
+  },
+  {
+   "m": "ofc_bin",
+   "p": [
+    27.4,
+    0,
+    34.8
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_bin",
+   "p": [
+    13.0,
+    0,
+    34.8
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_wet_floor",
+   "p": [
+    19.0,
+    0,
+    21.8
+   ],
+   "r": 30
+  },
+  {
+   "m": "ofc_printer",
+   "p": [
+    -13.5,
+    0,
+    27.4
+   ],
+   "r": 90,
+   "name": "Printer"
+  },
+  {
+   "m": "ofc_shelves",
+   "p": [
+    -20.4,
+    0,
+    34.6
+   ],
+   "r": 0,
+   "sc": 0.0838
+  },
+  {
+   "m": "ofc_shelves",
+   "p": [
+    -16.6,
+    0,
+    34.6
+   ],
+   "r": 0,
+   "sc": 0.0838
+  },
+  {
+   "m": "ofc_storage_box",
+   "p": [
+    -15.2,
+    0,
+    21.2
+   ],
+   "r": 10
+  },
+  {
+   "m": "ofc_storage_box",
+   "p": [
+    -15.4,
+    1.535,
+    21.3
+   ],
+   "r": 2
+  },
+  {
+   "m": "ofc_box",
+   "p": [
+    -22.4,
+    0,
+    33.6
+   ],
+   "r": 20
+  },
+  {
+   "m": "ofc_box",
+   "p": [
+    -21.6,
+    0,
+    31.6
+   ],
+   "r": -15
+  },
+  {
+   "m": "ofc_stapler",
+   "p": [
+    -22.5,
+    2.9,
+    26.0
+   ],
+   "r": 70
+  },
+  {
+   "m": "ofc_power_box",
+   "p": [
+    -43.6,
+    4.2,
+    34.0
+   ],
+   "r": -90,
+   "c": "none"
+  },
+  {
+   "m": "ofc_extinguisher",
+   "p": [
+    -25.6,
+    0,
+    35.0
+   ],
+   "r": 180
+  },
+  {
+   "m": "ofc_extinguisher",
+   "p": [
+    -26.4,
+    0,
+    35.0
+   ],
+   "r": 180,
+   "sc": 1.3
+  },
+  {
+   "m": "ofc_shelves",
+   "p": [
+    54.6,
+    0,
+    22.0
+   ],
+   "r": -90,
+   "sc": 0.0838
+  },
+  {
+   "m": "ofc_shelves",
+   "p": [
+    54.6,
+    0,
+    25.6
+   ],
+   "r": -90,
+   "sc": 0.0838
+  },
+  {
+   "m": "ofc_shelves",
+   "p": [
+    54.6,
+    0,
+    29.2
+   ],
+   "r": -90,
+   "sc": 0.0838
+  },
+  {
+   "m": "ofc_stack_chair",
+   "p": [
+    41.0,
+    0,
+    33.6
+   ],
+   "r": 180
+  },
+  {
+   "m": "ofc_stack_chair",
+   "p": [
+    41.0,
+    0.55,
+    33.75
+   ],
+   "r": 180
+  },
+  {
+   "m": "ofc_stack_chair",
+   "p": [
+    41.0,
+    1.1,
+    33.9
+   ],
+   "r": 180
+  },
+  {
+   "m": "ofc_stack_chair",
+   "p": [
+    41.0,
+    1.65,
+    34.05
+   ],
+   "r": 180
+  },
+  {
+   "m": "ofc_box",
+   "p": [
+    38.6,
+    0,
+    34.4
+   ],
+   "r": 5
+  },
+  {
+   "m": "ofc_box",
+   "p": [
+    38.8,
+    1.22,
+    34.3
+   ],
+   "r": -20
+  },
+  {
+   "m": "ofc_box",
+   "p": [
+    44.6,
+    0,
+    32.4
+   ],
+   "r": 40
+  },
+  {
+   "m": "ofc_crate",
+   "p": [
+    48.8,
+    0,
+    34.6
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_crate",
+   "p": [
+    48.9,
+    0.907,
+    34.5
+   ],
+   "r": 8
+  },
+  {
+   "m": "ofc_task_chair",
+   "p": [
+    43.2,
+    0,
+    27.6
+   ],
+   "r": 120
+  },
+  {
+   "m": "ofc_monitor",
+   "p": [
+    47.2,
+    0,
+    26.6
+   ],
+   "r": 30,
+   "c": "Box"
+  },
+  {
+   "m": "ofc_cleaner",
+   "p": [
+    39.6,
+    3.0,
+    20.6
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_wet_floor",
+   "p": [
+    40.0,
+    0,
+    21.6
+   ],
+   "r": -30
+  },
+  {
+   "m": "ofc_fluoro",
+   "p": [
+    46,
+    9.5,
+    27
+   ],
+   "r": 90,
+   "s": false,
+   "name": "StorageLight"
+  },
+  {
+   "m": "ofc_filing",
+   "p": [
+    -6.7,
+    0,
+    -6.2
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_filing",
+   "p": [
+    -5.0,
+    0,
+    -6.2
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_filing_open",
+   "p": [
+    -3.3,
+    0,
+    -6.2
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_filing",
+   "p": [
+    -1.6,
+    0,
+    -6.2
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_filing",
+   "p": [
+    0.1,
+    0,
+    -6.2
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_filing",
+   "p": [
+    1.8,
+    0,
+    -6.2
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_filing",
+   "p": [
+    3.5,
+    0,
+    -6.2
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_plant_a",
+   "p": [
+    6.4,
+    0,
+    -6.4
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_water_cooler",
+   "p": [
+    10.2,
+    0,
+    -12.0
+   ],
+   "r": -90
+  },
+  {
+   "m": "ofc_printer",
+   "p": [
+    10.6,
+    0,
+    -2.0
+   ],
+   "r": -90
+  },
+  {
+   "m": "ofc_plant_b",
+   "p": [
+    54.2,
+    0,
+    -42.2
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_plant_a",
+   "p": [
+    -54.4,
+    0,
+    -24.2
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_plant_b",
+   "p": [
+    54.0,
+    0,
+    15.6
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_lounge_chair",
+   "p": [
+    50.4,
+    0,
+    -36.8
+   ],
+   "r": -60
+  },
+  {
+   "m": "ofc_lounge_chair",
+   "p": [
+    48.0,
+    0,
+    -40.2
+   ],
+   "r": -10
+  },
+  {
+   "m": "ofc_coffee_table",
+   "p": [
+    51.6,
+    0,
+    -40.4
+   ],
+   "r": 50
+  },
+  {
+   "m": "ofc_box",
+   "p": [
+    -54.6,
+    0,
+    15.4
+   ],
+   "r": 25
+  },
+  {
+   "m": "ofc_extinguisher",
+   "p": [
+    -46.8,
+    0,
+    17.3
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_extinguisher",
+   "p": [
+    36.6,
+    0,
+    17.3
+   ],
+   "r": 0
+  },
+  {
+   "m": "ofc_fire_alarm",
+   "p": [
+    -53.0,
+    4.0,
+    17.72
+   ],
+   "r": 0,
+   "c": "none"
+  },
+  {
+   "m": "ofc_fire_alarm",
+   "p": [
+    14.0,
+    4.0,
+    17.72
+   ],
+   "r": 0,
+   "c": "none"
+  },
+  {
+   "m": "ofc_cctv",
+   "p": [
+    -44.9,
+    9.1,
+    17.4
+   ],
+   "r": 140,
+   "c": "none"
+  },
+  {
+   "m": "ofc_cctv",
+   "p": [
+    55.2,
+    9.1,
+    -10.0
+   ],
+   "r": -60,
+   "c": "none"
+  },
+  {
+   "m": "ofc_dartboard",
+   "p": [
+    35.7,
+    5.2,
+    32.5
+   ],
+   "r": 90,
+   "c": "none"
+  }
+ ],
+ "sounds": {
+  "rain": "ofc_rain",
+  "hvac": "ofc_hvac",
+  "server": "ofc_server",
+  "vending": "ofc_vending",
+  "hum": "ofc_hum",
+  "sfx": "ofc_sfx",
+  "reverb": "Room"
+ },
+ "pois": [
+  {
+   "name": "reception",
+   "pos": [
+    0,
+    3,
+    15
+   ]
+  },
+  {
+   "name": "cubicles",
+   "pos": [
+    -33,
+    3,
+    -6
+   ]
+  },
+  {
+   "name": "open_plan",
+   "pos": [
+    33,
+    3,
+    -10
+   ]
+  },
+  {
+   "name": "manager",
+   "pos": [
+    -45,
+    3,
+    -30.6
+   ]
+  },
+  {
+   "name": "conference",
+   "pos": [
+    -22,
+    3,
+    -30.8
+   ]
+  },
+  {
+   "name": "break_room",
+   "pos": [
+    22,
+    3,
+    22
+   ]
+  },
+  {
+   "name": "copy_room",
+   "pos": [
+    -18,
+    3,
+    24
+   ]
+  },
+  {
+   "name": "server_room",
+   "pos": [
+    -36,
+    3,
+    27
+   ]
+  },
+  {
+   "name": "storage",
+   "pos": [
+    46,
+    3,
+    24
+   ]
+  },
+  {
+   "name": "stair_landing",
+   "pos": [
+    -50,
+    3,
+    21
+   ]
+  },
+  {
+   "name": "stair_13",
+   "pos": [
+    -50,
+    -9.8,
+    21
+   ]
+  },
+  {
+   "name": "window_ne",
+   "pos": [
+    51.5,
+    3,
+    -30
+   ]
+  },
+  {
+   "name": "window_nw",
+   "pos": [
+    -30,
+    3,
+    -24
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "name": "spawn_view",
+   "cam": [
+    0,
+    5,
+    32.5
+   ],
+   "look": [
+    0,
+    4.2,
+    0
+   ]
+  },
+  {
+   "name": "reception",
+   "cam": [
+    5,
+    5.2,
+    15.5
+   ],
+   "look": [
+    -1,
+    3.5,
+    4
+   ]
+  },
+  {
+   "name": "cubicles",
+   "cam": [
+    -33,
+    5.2,
+    10
+   ],
+   "look": [
+    -33,
+    3.5,
+    -20
+   ]
+  },
+  {
+   "name": "open_plan",
+   "cam": [
+    14,
+    5.2,
+    8
+   ],
+   "look": [
+    40,
+    3.5,
+    -36
+   ]
+  },
+  {
+   "name": "manager",
+   "cam": [
+    -41.2,
+    5.2,
+    -29.6
+   ],
+   "look": [
+    -48,
+    3.0,
+    -40
+   ]
+  },
+  {
+   "name": "conference",
+   "cam": [
+    -34.0,
+    5.4,
+    -30.6
+   ],
+   "look": [
+    -18.0,
+    3.4,
+    -38.5
+   ]
+  },
+  {
+   "name": "break_room",
+   "cam": [
+    24,
+    5.2,
+    19.2
+   ],
+   "look": [
+    24,
+    3.5,
+    34
+   ]
+  },
+  {
+   "name": "server",
+   "cam": [
+    -36,
+    5.0,
+    19.4
+   ],
+   "look": [
+    -36,
+    3.5,
+    34
+   ]
+  },
+  {
+   "name": "stairwell",
+   "cam": [
+    -50,
+    5.2,
+    18.8
+   ],
+   "look": [
+    -50,
+    -6,
+    34
+   ]
+  },
+  {
+   "name": "copy_room",
+   "cam": [
+    -18,
+    5.2,
+    19.2
+   ],
+   "look": [
+    -14,
+    3,
+    32
+   ]
+  },
+  {
+   "name": "storage",
+   "cam": [
+    46,
+    5.2,
+    19.2
+   ],
+   "look": [
+    50,
+    3,
+    32
+   ]
+  },
+  {
+   "name": "window_ne",
+   "cam": [
+    30,
+    5.2,
+    -24
+   ],
+   "look": [
+    56,
+    5,
+    -48
+   ]
+  },
+  {
+   "name": "corridor_west",
+   "cam": [
+    -14,
+    5.2,
+    -24.5
+   ],
+   "look": [
+    -56,
+    4,
+    -25
+   ]
+  }
+ ],
+ "playVerified": [
+  {
+   "name": "stair_15",
+   "pos": [
+    -53.6,
+    15.8,
+    22.2
+   ],
+   "note": "Edit-mode PathfindingService returns NoPath on the upper west flight (U2) from both ends, with nothing in its volume; a character walks it in Play (Humanoid:MoveTo up U1, across, up U2 to the landing)."
+  }
+ ]
+}

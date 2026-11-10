@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Picture to Roblox Model with Claude, by fwjelaa</title><meta name="author" content="fwjelaa (FWJ STUDIOS)"><style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1d1b26;--muted:#5d5a6b;--line:#e3e0ea;--accent:#7a2fe0;--accent2:#ff7b1c;
+--code:#f1eef8;--pre:#1d1b26;--pretext:#f3f0ff}
+@media (prefers-color-scheme:dark){:root{--bg:#141320;--card:#1d1b2b;--ink:#ece9f6;--muted:#a7a3bb;--line:#2f2c42;
+--accent:#b98cff;--accent2:#ffa25c;--code:#2a2740;--pre:#0d0c16;--pretext:#ece9f6}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:880px;margin:0 auto;padding:40px 18px 80px}
+h1{font-size:2.4em;line-height:1.15;margin:.2em 0 .3em;letter-spacing:-.02em}
+h2{font-size:1.55em;margin:2.2em 0 .5em;padding-top:.3em;letter-spacing:-.01em}
+h3{font-size:1.2em;margin:1.6em 0 .4em}
+h1+p strong:first-child{color:var(--accent)}
+a{color:var(--accent)}hr{border:0;border-top:1px solid var(--line);margin:2.5em 0}
+code{background:var(--code);padding:.1em .35em;border-radius:5px;font:.88em ui-monospace,Consolas,monospace}
+pre{background:var(--pre);color:var(--pretext);padding:16px 18px;border-radius:12px;overflow-x:auto;line-height:1.5}
+pre code{background:none;padding:0;color:inherit;font-size:.85em}
+blockquote{margin:1.4em 0;padding:14px 18px;background:var(--card);border:1px solid var(--line);
+border-left:5px solid var(--accent2);border-radius:10px}blockquote p{margin:.3em 0}
+.table{overflow-x:auto;margin:1.2em 0}table{border-collapse:collapse;width:100%;background:var(--card);
+border-radius:10px;overflow:hidden;font-size:.94em}th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);
+vertical-align:top}th{background:var(--code)}
+figure{margin:1.6em 0}figure img,p img{max-width:100%;border-radius:12px;display:block;box-shadow:0 4px 18px rgba(0,0,0,.12)}
+figcaption{color:var(--muted);font-size:.9em;margin-top:8px;text-align:center}
+li{margin:.25em 0}.credit{position:sticky;top:0;z-index:2;background:var(--accent);color:#fff;text-align:center;
+padding:8px 12px;font-weight:600;font-size:.95em}
+</style></head>
+<body><div class="credit">Method by fwjelaa (FWJ STUDIOS): please credit fwjelaa if you use or share it</div>
+<main>
+<h1 id="picture--roblox-model-with-claude">Picture → Roblox Model, with Claude</h1>
+<p><strong>Send Claude a picture of a character and get back a polished, textured Roblox model.</strong></p>
+<blockquote><p><strong>Method by fwjelaa (FWJ STUDIOS).</strong> It's free to use in your own games. If you use it, show it or share it, please credit <strong>fwjelaa</strong> and link the video you got it from.</p></blockquote>
+<figure><img src="images/all_40_in_roblox.jpg" alt="40 characters made with this method, inside Roblox" loading="lazy"><figcaption>40 characters made with this method, inside Roblox</figcaption></figure>
+<p>Every one of these 40 characters in my Roblox game <em>+ 1 Lift a Rock for CUH</em> was made with this pack. Each one started as a single picture.</p>
+<hr>
+<h2 id="contents">Contents</h2>
+<ol><li><a href="#how-it-works">How it works</a></li><li><a href="#what-you-need">What you need</a></li><li><a href="#quick-start">Quick start</a></li><li><a href="#pictures-that-work-best">Pictures that work best</a></li><li><a href="#getting-it-into-roblox">Getting it into Roblox</a></li><li><a href="#automatic-upload-optional">Automatic upload (optional)</a></li><li><a href="#using-the-models-in-your-game">Using the models in your game</a></li><li><a href="#under-the-hood">Under the hood</a></li><li><a href="#gotchas">Gotchas</a></li><li><a href="#numbers-cheat-sheet">Numbers cheat sheet</a></li><li><a href="#credits">Credits</a></li></ol>
+<hr>
+<h2 id="how-it-works">How it works</h2>
+<p>You don't model anything. <strong>Claude writes a short Python script that builds the model in Blender</strong>, from a toolkit made for cute, polished, toy-like characters: sculpted heads, cartoon eyes, crisp face markings, clothes, sneakers, limbs and props.</p>
+<p>Then Claude does what an artist would do, on its own:</p>
+<ol><li><strong>Build</strong> the model in Blender (in the background: you never have to open Blender).</li><li><strong>Compare</strong>: put your picture, the front view and the back view side by side.</li><li><strong>Fix</strong> whatever doesn't match, and build again. It repeats this until the model matches your picture.</li><li><strong>Bake</strong> it for Roblox: one light mesh (about 16,000 triangles) with colour, normal and roughness textures, so all the detail survives.</li></ol>
+<pre><code>your picture ─▶ Claude writes the build script ─▶ build ▸ compare ▸ fix (loop) ─▶ Roblox-ready model ─▶ your game</code></pre>
+<figure><img src="images/compare_with_reference.png" alt="Your picture next to the front and back of the model: this is what Claude checks every round" loading="lazy"><figcaption>Your picture next to the front and back of the model: this is what Claude checks every round</figcaption></figure>
+<hr>
+<h2 id="what-you-need">What you need</h2>
+<div class="table"><table><thead><tr><th>What</th><th>Notes</th></tr></thead><tbody><tr><td><strong>Blender 4.2 or newer</strong></td><td>Free from blender.org. Tested on 5.1. Just install it; the pack finds it by itself.</td></tr><tr><td><strong>Python 3</strong></td><td>python.org. On Windows, tick "Add Python to PATH" when installing.</td></tr><tr><td><strong>Claude Code</strong></td><td>The <strong>Code</strong> tab in the Claude desktop app, or the <code>claude</code> command line tool. It needs a paid Claude plan (Pro or Max) or an API key.</td></tr><tr><td><strong>Roblox Studio</strong></td><td>To put the models in your game.</td></tr></tbody></table></div>
+<hr>
+<h2 id="quick-start">Quick start</h2>
+<ol><li><strong>Unzip</strong> this pack somewhere, for example <code>Documents\RobloxModels</code>.</li><li><strong>Open the folder in Claude Code.</strong> In the desktop app: open the <strong>Code</strong> tab and pick the folder. On the command line: <code>cd</code> into the folder and run <code>claude</code>.</li><li><strong>Send your picture.</strong> Drag it into the chat (or put it in the <code>ref</code> folder) and say:</li></ol>
+<blockquote><p>make this into a roblox model</p></blockquote>
+<p>or type <strong><code>/make-model</code></strong>.</p>
+<ol><li><strong>Wait.</strong> The first time, Claude checks your setup (Blender and Python). Then it builds, compares and fixes the model by itself, round after round, and bakes the Roblox version. You can watch the compare images as it goes.</li><li><strong>Get your model.</strong> Claude shows you the final front and back views and gives you: - <code>out/&lt;Name&gt;.fbx</code>: the model, ready for Roblox - <code>out/&lt;Name&gt;_Color.png</code>, <code>_Normal.png</code>, <code>_Rough.png</code>: its textures</li></ol>
+<p>Want changes? Just say so: <em>"make the eyes bigger"</em>, <em>"the shirt should be green"</em>, <em>"give it a cape"</em>. Claude edits the model and bakes it again.</p>
+<p>Have several characters? Send them all: Claude can build them one after another, or several at once with subagents.</p>
+<figure><img src="images/example_BearBuddy.png" alt="The example model that comes with the pack: front and back" loading="lazy"><figcaption>The example model that comes with the pack: front and back</figcaption></figure>
+<hr>
+<h2 id="pictures-that-work-best">Pictures that work best</h2>
+<ul><li><strong>The whole body</strong>, in a <strong>front three-quarter view</strong> (slightly turned, like most character art).</li><li><strong>One clear pose</strong>, with props held close to the body.</li><li><strong>Plain or transparent background</strong>, at least about 1000 px.</li><li><strong>Side views are fine too:</strong> Claude turns the preview camera to match your picture, while the model still faces forward in Roblox.</li><li><strong>Cartoon or toy style</strong> works best: the toolkit is made for cute, chunky, toy-like characters.</li><li>Floating sparkles, glows and auras can't be part of one solid model. Claude turns them into solid shapes touching the body, or leaves them out so your game can add particles.</li></ul>
+<hr>
+<h2 id="getting-it-into-roblox">Getting it into Roblox</h2>
+<p>The quick way, no setup:</p>
+<ol><li>In Roblox Studio: <strong>File → Import 3D</strong> (or the <strong>Import 3D</strong> button) and pick <code>out/&lt;Name&gt;.fbx</code>.</li><li>Check the MeshPart has its textures. If it comes in grey, add a <strong>SurfaceAppearance</strong> to it and set its <strong>ColorMap</strong>, <strong>NormalMap</strong> and <strong>RoughnessMap</strong> to the three PNGs (upload them as images first).</li><li>The model should face <strong>−Z</strong> (Roblox's front). If it doesn't, rotate it.</li></ol>
+<figure><img src="images/model_in_roblox.jpg" alt="A finished model inside Roblox" loading="lazy"><figcaption>A finished model inside Roblox</figcaption></figure>
+<hr>
+<h2 id="automatic-upload-optional">Automatic upload (optional)</h2>
+<p>If you make lots of models, let the pack upload them and install them in your game for you.</p>
+<p><strong>Set up once:</strong></p>
+<ol><li><strong>Create an API key.</strong> On create.roblox.com, open <strong>Open Cloud → API Keys → Create API Key</strong>. Add the <strong>Assets API</strong> with <strong>Read</strong> and <strong>Write</strong>. If your game belongs to a <strong>group</strong>, create the key so it can upload for that group.</li><li>Put the key in <strong><code>.secrets/roblox-api-key.txt</code></strong>: just the key, nothing else.</li><li>Fill in <strong><code>config.json</code></strong>:</li></ol>
+<pre><code class="lang-json">{
+  &quot;group_id&quot;: &quot;1234567&quot;,
+  &quot;user_id&quot;: &quot;&quot;,
+  &quot;name_prefix&quot;: &quot;MyGame &quot;
+}</code></pre>
+<ul><li><code>group_id</code> if your game belongs to a group; otherwise leave it empty and fill in your <code>user_id</code>.</li><li><strong>The model must have the same owner as the game.</strong> Roblox only lets a game load private models owned by its own owner, so a group game needs group-owned models.</li><li><code>name_prefix</code> goes in front of every asset's name on Roblox.</li></ul>
+<blockquote><p>⚠️ <strong>Never share your API key.</strong> Don't show it on stream, put it in a zip or commit it. If it leaks, delete it on create.roblox.com and make a new one.</p></blockquote>
+<p><strong>Then</strong> ask Claude to <em>"upload it"</em>. It runs <code>python kit/upload_all.py &lt;Name&gt;</code>, which uploads the model and writes <code>out/install.luau</code>. Next:</p>
+<ol><li>In Studio, create a <strong>ModuleScript</strong> in <strong>ServerStorage</strong> called <strong><code>ModelInstaller</code></strong> and paste in <code>roblox/ModelInstaller.luau</code> (one time). At the top, set <code>TARGET_FOLDER</code> to where your game keeps its models.</li><li>In <strong>Edit mode</strong>, paste <code>out/install.luau</code> into the <strong>command bar</strong> and press Enter.</li></ol>
+<p>Each model becomes a Model with an invisible <strong>Root</strong> part (its bottom is at the feet, and so is the model's pivot) and the textured <strong>Body</strong>, facing −Z. Anything that was there before is backed up to <code>ServerStorage.ModelBackup</code>.</p>
+<hr>
+<h2 id="using-the-models-in-your-game">Using the models in your game</h2>
+<p>Put <code>roblox/ModelHelpers.luau</code> in ReplicatedStorage as a ModuleScript and use it wherever you show a model:</p>
+<pre><code class="lang-lua">local ModelHelpers = require(game.ReplicatedStorage.ModelHelpers)
+
+local model = ModelHelpers.copy(game.ReplicatedStorage.Models.BearBuddy) -- pivot at the feet
+ModelHelpers.standOn(model, workspace.Pedestal)                          -- on top, facing the player
+model.Parent = workspace
+
+viewport.CurrentCamera = ModelHelpers.portraitCamera(model)              -- hotbar icon that shows the face
+ModelHelpers.tint(model, Color3.fromRGB(255, 214, 92))                   -- a Golden variant</code></pre>
+<ul><li><strong>Face the player:</strong> give each pedestal, pad or slot a <strong><code>Facing</code></strong> attribute (a Vector3 pointing at where players stand). <code>standOn</code> turns the model to look that way.</li><li><strong>Variants</strong> (Golden, Diamond, Galaxy...): <code>tint</code> the SurfaceAppearance. Don't recolour the MeshPart: with a texture on, it doesn't change, and removing the texture loses the face. I use <code>255, 214, 92</code> for Golden, <code>140, 236, 255</code> for Diamond and <code>196, 120, 255</code> for Galaxy, plus Sparkles.</li></ul>
+<hr>
+<h2 id="under-the-hood">Under the hood</h2>
+<p>You don't need this section to use the pack. It's here if you're curious, or want to build models without AI.</p>
+<h3 id="whats-in-the-pack">What's in the pack</h3>
+<div class="table"><table><thead><tr><th>Path</th><th>What it is</th></tr></thead><tbody><tr><td><code>CLAUDE.md</code></td><td>The instructions Claude follows: the step-by-step flow, the toolkit, the quality bar and the gotchas. Claude Code reads it automatically.</td></tr><tr><td><code>.claude/skills/make-model/</code></td><td>The <code>/make-model</code> command.</td></tr><tr><td><code>.claude/settings.json</code></td><td>Lets Claude run the pack's own tools without asking every time (and nothing else).</td></tr><tr><td><code>kit/cuhkit.py</code></td><td><strong>The toolkit</strong>: every building block.</td></tr><tr><td><code>kit/run.py</code></td><td>One command for everything (it finds Blender): <code>check</code>, <code>ref</code>, <code>build</code>, <code>measure</code>, <code>export</code>, <code>baked</code>.</td></tr><tr><td><code>kit/preview.py</code>, <code>compare.py</code>, <code>measure.py</code>, <code>render_baked.py</code>, <code>review_sheet.py</code></td><td>Build and render, compare images, measure proportions, render the baked mesh, stack many compare images.</td></tr><tr><td><code>kit/upload_asset.py</code>, <code>upload_all.py</code></td><td>Upload to Roblox and write the install script.</td></tr><tr><td><code>build/BearBuddy.py</code></td><td><strong>The example model.</strong> Claude reads it to learn the style.</td></tr><tr><td><code>ref/</code>, <code>out/</code></td><td>Your pictures; everything the tools make.</td></tr><tr><td><code>roblox/</code></td><td><code>ModelInstaller.luau</code> and <code>ModelHelpers.luau</code> for Studio.</td></tr><tr><td><code>build.bat</code> / <code>build.sh</code></td><td>Shortcuts: <code>.\build BearBuddy</code> or <code>.\build BearBuddy export</code>.</td></tr></tbody></table></div>
+<h3 id="the-commands">The commands</h3>
+<pre><code class="lang-bat">python kit/run.py check                 :: is Blender + Python ready?
+python kit/run.py build BearBuddy       :: build + render + out/compare_BearBuddy.png
+python kit/run.py export BearBuddy      :: also bake the Roblox mesh -&gt; out/BearBuddy.fbx + textures
+python kit/run.py baked BearBuddy       :: render exactly what Roblox gets -&gt; out/baked_BearBuddy.png
+python kit/run.py ref pic.jpg MyModel   :: copy a picture into ref/MyModel.png
+python kit/run.py measure MyModel       :: picture vs render proportions, band by band</code></pre>
+<h3 id="a-build-script">A build script</h3>
+<p>Open <code>build/BearBuddy.py</code>. Every model follows the same pattern:</p>
+<ul><li>Units are <strong>studs</strong>. The model stands on <strong>z = 0</strong>, faces <strong>−Y</strong> and is about <strong>4 studs tall</strong>.</li><li><strong>Heads are sculpted with code</strong>: <code>quadsphere</code> makes an even sphere and <code>push</code> bulges or dents it like a sculpting brush.</li></ul>
+<pre><code class="lang-python">head = k.quadsphere(f&quot;{CUH}_Head&quot;, coll, HEAD_C, (0.98, 0.9, 0.86), cuts=64)
+k.push(head, (0, -0.72, -0.25), 0.5, 0.2, direction=(0, -1, 0))     # muzzle
+for s in (-1, 1):
+    k.push(head, (s * 0.5, -0.6, -0.15), 0.4, 0.06)                  # cheeks
+k.groove(head, mouth_z, (-0.3, 0.3), width=0.06, depth=0.03)        # smile line</code></pre>
+<ul><li><strong>Face markings are crisp colour regions.</strong> You write a function that is positive inside the region. The kit stores it on the mesh, and the material draws a perfectly sharp edge at any resolution:</li></ul>
+<pre><code class="lang-python">def muzzle(c):   # c = a point on the head, in the head&#x27;s own space
+    return min(1 - math.sqrt((c.x / 0.42) ** 2 + ((c.z + 0.26) / 0.3) ** 2), (-0.4 - c.y) * 2)
+
+k.sdf_attr(head, &quot;muzzle&quot;, muzzle)
+k.set_mats(head, k.region_mat(f&quot;{CUH}_Head&quot;, &quot;#93603a&quot;, [(&quot;muzzle&quot;, &quot;#f3dcb4&quot;, 0.5)]))</code></pre>
+<ul><li><strong>Everything else comes from kit pieces:</strong> <code>eye</code> (cartoon eyes with optional lids), <code>tshirt</code>, <code>shorts</code>, <code>sneaker</code>, <code>tube</code> (arms, legs, tails), <code>blob</code> (clay-like fused shapes for bodies, hair, clothes) and <code>turn</code> (head turns). The full list is in <code>CLAUDE.md</code>.</li></ul>
+<h3 id="the-quality-bar">The quality bar</h3>
+<p>Each round, the model is checked against the picture in this order:</p>
+<ol><li><strong>Silhouette and proportions</strong>: head-to-body ratio, limb thickness, prop sizes.</li><li><strong>Signature features</strong>: the face, the outfit, props and markings. You should recognise it at a glance.</li><li><strong>Colours</strong>: saturated and right.</li><li><strong>The back</strong>: no holes, no floating parts, nothing poking through.</li><li><strong>No artifacts</strong>: rippled lines, jagged edges, flickering surfaces.</li></ol>
+<figure><img src="images/push_fix_before_after.png" alt="Small details matter: reading normals before moving vertices turns a rippled lip (left) smooth (right)" loading="lazy"><figcaption>Small details matter: reading normals before moving vertices turns a rippled lip (left) smooth (right)</figcaption></figure>
+<hr>
+<h2 id="gotchas">Gotchas</h2>
+<p><strong>In Roblox</strong></p>
+<ul><li><strong>A Model with a PrimaryPart ignores <code>Model.WorldPivot</code>.</strong> Set the pivot through <code>PrimaryPart.PivotOffset</code> instead (the installer and <code>ModelHelpers.copy</code> do), or every model sinks half its height into the floor.</li><li><strong>Disc pads are cylinders lying on their side.</strong> Their own Y axis points sideways, so <code>standOn</code> measures the top along world up. Otherwise your model stands sideways.</li><li><strong>Hotbar and index pictures show the model's back</strong> if the viewport camera sits behind it. Use <code>portraitCamera</code>.</li><li><strong>Models copy their pedestal's rotation</strong> and end up facing walls. Use <code>Facing</code> attributes.</li><li><strong>Freshly uploaded images may not load for a few minutes</strong> while Roblox moderates them.</li><li><strong>Keep it moderation-safe:</strong> cartoon props only, no real weapons, nothing offensive.</li></ul>
+<p><strong>In Blender</strong> (Claude already knows these from <code>CLAUDE.md</code>)</p>
+<ul><li><strong>Metal bakes black</strong>, so the pack bakes metals as their base colour; shine comes from gloss instead.</li><li><strong>Dark sunglasses can't be see-through</strong> after the bake. Place them so the eyes still show.</li><li><strong>Shiny fur looks like plastic.</strong> Fur and skin stay matte, and gloss goes on eyes, noses, shoes and props.</li></ul>
+<hr>
+<h2 id="numbers-cheat-sheet">Numbers cheat sheet</h2>
+<div class="table"><table><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody><tr><td>Character height</td><td>3.8 to 4.4 studs</td></tr><tr><td>Footprint</td><td>about 3.2 × 3.2 studs (up to 3.6 for wings, tails and vehicles)</td></tr><tr><td>Roblox mesh</td><td>about 16,000 triangles (hard limit 20,000)</td></tr><tr><td>Textures</td><td>colour, normal and roughness, 1024 × 1024</td></tr><tr><td>One build + render</td><td>about 15 seconds</td></tr><tr><td>Bake for Roblox</td><td>about 20 seconds to a minute</td></tr><tr><td>Rounds per model</td><td>usually 5 to 10</td></tr></tbody></table></div>
+<hr>
+<h2 id="credits">Credits</h2>
+<p><strong>Method by fwjelaa (FWJ STUDIOS)</strong>, made for the Roblox game <em>+ 1 Lift a Rock for CUH</em>.</p>
+<p>You're free to use this pack in your own games. If you use it, show it, teach it or share it, please credit <strong>fwjelaa</strong> and link back to the video you got it from.</p>
+<p>Made with Blender, Python, Roblox Studio, Roblox Open Cloud and Claude Code.</p>
+</main></body></html>

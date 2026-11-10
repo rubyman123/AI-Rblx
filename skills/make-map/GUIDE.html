@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roblox Maps by fwjelaa: the full guide</title>
+<style>
+:root { --paper: #f7f5f0; --ink: #1d1f1c; --muted: #5a5f57; --rule: #d8d4ca; --code: #ebe7dd; --accent: #2f6b4f; }
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #161816; --ink: #e6e4dd; --muted: #a3a79e; --rule: #33362f; --code: #23261f; --accent: #8fc7a6; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 16px 4rem; }
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.25; margin: 2.2rem 0 0.8rem; }
+h1 { font-size: 2.1rem; margin-top: 0.5rem; }
+h2 { font-size: 1.5rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); }
+h3 { font-size: 1.2rem; }
+p, li { max-width: 42rem; }
+a { color: var(--accent); }
+code { font: 0.88em/1.4 ui-monospace, Consolas, "Cascadia Mono", monospace; background: var(--code);
+  padding: 0.1em 0.3em; border-radius: 3px; }
+pre { background: var(--code); padding: 0.9rem 1rem; border-radius: 4px; overflow-x: auto; }
+pre code { padding: 0; background: none; }
+.scroll { overflow-x: auto; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; min-width: 32rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.45rem 0.7rem; border-bottom: 1px solid var(--rule); }
+th { color: var(--muted); font-weight: 600; }
+img { display: block; max-width: 100%; height: auto; border-radius: 4px; margin: 0.8rem 0; }
+</style>
+</head>
+<body>
+<main>
+<h1 id="roblox-maps-by-fwjelaa-the-full-guide">Roblox Maps by fwjelaa: the full guide</h1>
+<p>Method, kit and example maps by <strong>fwjelaa (FWJ STUDIOS)</strong>. Free to use and change; please credit fwjelaa when you share maps or videos made with it.</p>
+<p>You describe a place (&quot;an abandoned farmhouse at night&quot;, &quot;a forest lake at golden hour&quot;), and Claude Code builds it in the Roblox Studio place you have open: walkable, lit, checked from every angle, and light enough to run. You never place a part. This guide explains what you need, how a build goes, how to change the result, and what to do when something looks wrong.</p>
+<h2 id="what-you-need">What you need</h2>
+<div class="scroll"><table>
+<thead><tr><th>Thing</th><th>Why</th><th>Where</th></tr></thead>
+<tbody>
+<tr><td>Roblox Studio with the Studio MCP connected</td><td>Claude builds in your open place through it</td><td>Studio: Assistant → ... → Manage MCP Servers → Enable Studio as MCP server, then its Claude Code button</td></tr>
+<tr><td>Claude Code</td><td>runs the <code>/make-map</code> skill</td><td>claude.com/claude-code</td></tr>
+<tr><td>Python 3.9 or newer, with <code>python -m pip install pillow numpy</code></td><td>prepares textures and sounds</td><td>python.org</td></tr>
+<tr><td>Blender 4.2 or newer (realistic maps only)</td><td>prepares scanned models and grows trees, in the background</td><td>blender.org</td></tr>
+<tr><td>A Roblox Open Cloud API key (realistic maps, strongly advised)</td><td>uploads textures and models to <strong>your</strong> account</td><td>create.roblox.com → Open Cloud → API Keys</td></tr>
+</tbody></table></div>
+<p>Blocky simulator maps need only Studio, Claude Code and Python. The backrooms need textures (a key makes that automatic). The farmhouse and the forest lake need Blender and, in practice, a key: they use 38 and 15 models, and without a key each model is a file you import by hand.</p>
+<p><strong>The key.</strong> Give it only <strong>Assets API read and write, for your own user</strong>. Save it as one line in <code>%USERPROFILE%\.fwjelaa\roblox-open-cloud.key</code> (or set the <code>ROBLOX_API_KEY</code> environment variable). It never goes into the pack, the zip refuses anything that looks like a key, and Claude never prints it. Don&#x27;t paste it into a chat you share or film; if it was ever on screen, delete it and make a new one.</p>
+<h2 id="install">Install</h2>
+<ol>
+<li>Unzip <code>Roblox-Maps-by-fwjelaa.zip</code> anywhere.</li>
+<li>Open Claude Code in that folder.</li>
+<li>Type: <code>python kit/tools/run.py check</code>. It says what is missing (Python packages, Blender, the key) and which Roblox account your uploads will go to.</li>
+<li>Open Roblox Studio with a fresh <strong>Baseplate</strong> place and keep its window visible while Claude works.</li>
+</ol>
+<h2 id="your-first-map">Your first map</h2>
+<p>Type <code>/make-map</code> and what you want, for example:</p>
+<pre><code>/make-map a forest lake at golden hour with a pier and a campfire
+</code></pre>
+<p>What happens next:</p>
+<ol>
+<li><strong>Setup.</strong> Claude starts a small local server that hands the kit to Studio, loads the kit into <code>ServerStorage.MapKit</code>, and takes a test screenshot.</li>
+<li><strong>Plan.</strong> You get five lines: style, layout, focal point (what you see from spawn), mood and lighting, size. Say &quot;go&quot;, or change anything. Say &quot;just build it&quot; up front to skip this.</li>
+<li><strong>Assets</strong> (textured and realistic maps). Claude fetches free CC0 textures and models from Poly Haven and ambientCG, prepares them, and uploads them to your account. Image uploads take seconds; sounds a few minutes.</li>
+<li><strong>Build.</strong> The map is built in phases (ground, route, landmarks, scatter, lighting...), one at a time.</li>
+<li><strong>QA loop.</strong> Claude photographs the map from fixed spots, walks every route with Roblox&#x27;s pathfinder, counts triangles and draw calls, fixes the biggest problem, and repeats: at least two rounds, usually three to five.</li>
+<li><strong>Handover.</strong> You get what was built, the best shots (also saved in <code>maps/&lt;id&gt;/shots/</code>) and the budget numbers.</li>
+</ol>
+<p>Then <strong>save the place (Ctrl+S)</strong>. Claude never publishes it.</p>
+<h2 id="the-four-styles">The four styles</h2>
+<p>Each style has a guide in <code>styles/</code> (sizes, materials, lighting, layout, what makes it look fake) and a finished example in <code>maps/</code>. Ask for an example by name: &quot;build the forest lake example&quot;.</p>
+<h3 id="blocky-simulator-lift-a-boulder">Blocky simulator (<code>lift-a-boulder</code>)</h3>
+<p><img src="maps/lift-a-boulder/shots/spawn_view.jpg" alt="Lift a Boulder, spawn view" loading="lazy"></p>
+<p>Bright, chunky, readable from far away: an island with a spawn plaza and zones that get harder (meadow, desert, snow, volcano), upgrade pads, ground arrows, zone gates and a giant boulder you can see from spawn. All parts, no uploads.</p>
+<h3 id="backrooms-backrooms-level-0">Backrooms (<code>backrooms-level-0</code>)</h3>
+<p><img src="maps/backrooms-level-0/shots/spawn_view.jpg" alt="Backrooms Level 0, spawn view" loading="lazy"></p>
+<p>A seeded maze of yellow office rooms: damp carpet, wallpaper and ceiling tiles from CC0 scans, a grid of fluorescent panels, a pillar room, a dark wing and a buzzing hum.</p>
+<h3 id="abandoned-horror-house-farmhouse-night">Abandoned horror house (<code>farmhouse-night</code>)</h3>
+<p><img src="maps/farmhouse-night/shots/spawn_view.jpg" alt="Farmhouse at night, spawn view" loading="lazy"></p>
+<p>A two-storey farmhouse you can walk through, built to real sizes (1 stud = 0.28 m): 35 scanned furniture and prop models, 13 scanned materials, a hole in the roof with moonlight falling through to the parlour, a dead tree grown in Blender, night wind.</p>
+<h3 id="realistic-nature-forest-lake">Realistic nature (<code>forest-lake</code>)</h3>
+<p><img src="maps/forest-lake/shots/spawn_view.jpg" alt="Forest lake at golden hour, spawn view" loading="lazy"></p>
+<p>A valley shaped by code: a lake with a pier and a campfire, a stream from the hills, maple, birch and pine trees grown in Blender with real leaf textures, scanned rocks, logs and ferns, and a real photographed sky with its low sun matched to Roblox&#x27;s.</p>
+<h3 id="anything-else">Anything else</h3>
+<p>Describe it. Claude picks the nearest style, fills a copy of the template <code>styles/_custom.md</code> as <code>maps/&lt;id&gt;/style.md</code>, and writes down what it changed in <code>maps/&lt;id&gt;/notes.md</code>.</p>
+<h2 id="how-it-works">How it works</h2>
+<ul>
+<li><strong>The kit</strong> (<code>kit/studio/MapKit/</code>) is a tested Luau library loaded into Studio: walls with door and window openings, stairs, scatter that respects slopes and water, terrain from a height function, lighting presets, scanned-model placement, a map validator and a walk test. Claude writes each map as data (<code>maps/&lt;id&gt;/map.json</code>) plus a short build script (<code>maps/&lt;id&gt;/build.luau</code>) that calls the kit.</li>
+<li><strong>The tools</strong> (<code>kit/tools/run.py</code>) fetch, prepare and upload assets, and record each one in <code>assets.json</code> with its source, licence and the exact command that made it.</li>
+<li><strong>The skill</strong> (<code>/make-map</code>, rules in <code>CLAUDE.md</code>) holds the workflow and every Roblox quirk measured while building the examples, so Claude doesn&#x27;t rediscover them.</li>
+<li><strong>One map per place.</strong> Maps are built around the origin. To build another in the same place, Claude stashes the old one in <code>ServerStorage.MapKit_Stash</code> (nothing is ever deleted) and hands its terrain back.</li>
+<li><strong>Safe by default.</strong> Terrain is only written inside a box the map has claimed; anything of yours in the way is moved to <code>ServerStorage.MapKit_Removed</code>, never deleted.</li>
+</ul>
+<h2 id="changing-a-map">Changing a map</h2>
+<p>You can just ask (&quot;more trees by the lake&quot;, &quot;make it darker&quot;, &quot;move the pier&quot;), or edit <code>maps/&lt;id&gt;/map.json</code> yourself and ask Claude to re-run the phase that uses it. Each phase rebuilds only its own layers, so a change to the trees re-runs only <code>trees</code>. Anything you added by hand inside <code>Workspace.Map_&lt;id&gt;</code> is lost when its layer is rebuilt; put your own things outside it.</p>
+<p>Useful knobs in <code>map.json</code>:</p>
+<div class="scroll"><table>
+<thead><tr><th>Knob</th><th>Example</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td><code>lighting</code></td><td><code>"golden"</code></td><td>the mood preset: <code>simulator</code>, <code>liminal</code>, <code>night</code> or <code>golden</code></td></tr>
+<tr><td><code>seed</code></td><td><code>21</code></td><td>a different seed gives a different layout with the same rules</td></tr>
+<tr><td><code>trees</code>, <code>scatter</code> counts</td><td><code>{"m": "lake_pine_a", "count": 24}</code></td><td>density; fewer is lighter on phones</td></tr>
+<tr><td><code>water</code></td><td><code>{"color": [30, 58, 52], "transparency": 0.25}</code></td><td>lake colour and clarity</td></tr>
+<tr><td><code>shots</code></td><td><code>{"name": "pier_end", "cam": [...], "look": [...]}</code></td><td>the spots QA photographs</td></tr>
+</tbody></table></div>
+<h2 id="budgets-will-it-run">Budgets: will it run?</h2>
+<p>Roblox&#x27;s own guide is about 800,000 triangles and 600 draw calls per view for 60 fps on most PCs; for phones aim for about 500,000 and 500. Claude measures every map in Play mode from each shot spot (shadows not counted).</p>
+<div class="scroll"><table>
+<thead><tr><th>Map</th><th>Busiest eye-level view</th><th>Draw calls (max)</th><th>Phones</th></tr></thead>
+<tbody>
+<tr><td>Lift a Boulder</td><td>362k (spawn)</td><td>229</td><td>inside the phone target at every player-height view</td></tr>
+<tr><td>Backrooms Level 0</td><td>182k (spawn)</td><td>238</td><td>inside</td></tr>
+<tr><td>Farmhouse at night</td><td>700k (spawn)</td><td>176</td><td>over at spawn: ~45% is Roblox&#x27;s terrain grass blades</td></tr>
+<tr><td>Forest lake</td><td>688k (spawn)</td><td>257</td><td>over at spawn, pier and path: grass blades and 90 trees</td></tr>
+</tbody></table></div>
+<p>Roblox lowers grass and mesh detail on low graphics settings by itself. To make a realistic map lighter: turn terrain grass off (Terrain properties in Studio), or ask for fewer trees and props.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="scroll"><table>
+<thead><tr><th>You see</th><th>Why</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Screenshots time out</td><td>Studio&#x27;s window is behind others, minimized, or the display went to sleep</td><td>Bring Studio to the front and move the mouse; Claude can do both on Windows</td></tr>
+<tr><td>Everything textured looks white right after a break</td><td>textures stream back in after the display wakes</td><td>wait a few seconds; Claude captures again before judging</td></tr>
+<tr><td>One rock or stump stays a smooth white (or black) blob, even in Play</td><td>Roblox failed to process that model&#x27;s textures, and re-uploading the same file reuses the failed copy</td><td>ask Claude to re-make it; if it stays white, swap the scan for a similar one</td></tr>
+<tr><td>Flat gold or white sheets over the land in Edit mode only</td><td>Studio keeps old water drawn after terrain has been rebuilt a few times</td><td>press Play to check; it is not in the map</td></tr>
+<tr><td>&quot;the field ... is outside its claimed box&quot;</td><td>the map&#x27;s terrain needs a bigger box</td><td>Claude enlarges the box in <code>map.json</code> and runs the phase again</td></tr>
+<tr><td>A phase stops listing <code>run.py material ...</code> or <code>run.py model ...</code> commands</td><td>a fresh pack has the recipes but not your uploads</td><td>run the listed commands (Claude does), then the phase again</td></tr>
+<tr><td>&quot;refuses: the box already holds terrain the map didn&#x27;t make&quot;</td><td>your place already has terrain there</td><td>use a fresh Baseplate place, or ask Claude to move the map</td></tr>
+<tr><td>Grass blades poking through floors</td><td>Roblox&#x27;s grass grows through anything on Grass terrain</td><td>maps put mud or dirt terrain under buildings</td></tr>
+</tbody></table></div>
+<h2 id="credits">Credits</h2>
+<p>Method, kit and example maps by fwjelaa (FWJ STUDIOS). Textures, models, skies and leaf textures are CC0 from Poly Haven (polyhaven.com) and ambientCG (ambientcg.com); every asset is listed in <code>CREDITS.md</code> and <code>assets.json</code>. Sounds are generated by the kit. Research sources are listed in each file in <code>research/</code>.</p>
+</main>
+</body>
+</html>

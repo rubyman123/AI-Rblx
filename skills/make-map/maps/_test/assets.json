@@ -1,0 +1,88 @@
+{
+  "materials": {
+    "kit_test_mat": {
+      "base": "Fabric",
+      "studsPerTile": 6,
+      "pattern": "Organic",
+      "ids": {
+        "color": "rbxassetid://100",
+        "normal": "rbxassetid://100",
+        "roughness": "rbxassetid://100"
+      }
+    },
+    "kit_test_half": {
+      "base": "Plastic",
+      "studsPerTile": 4,
+      "pattern": "Regular",
+      "source": "ambientcg:Test001",
+      "tint": "#123456",
+      "motif": "dots:64:0.2",
+      "ids": {
+        "color": "rbxassetid://1"
+      }
+    },
+    "kit_test_partial": {
+      "base": "Plastic",
+      "studsPerTile": 4,
+      "pattern": "Regular",
+      "source": "ambientcg:Test002",
+      "files": {
+        "color": "c.png",
+        "normal": "n.png",
+        "roughness": "r.png"
+      },
+      "ids": {
+        "color": "rbxassetid://1",
+        "normal": "rbxassetid://2"
+      }
+    }
+  },
+  "models": {
+    "kit_test_model": {
+      "id": "rbxassetid://123",
+      "source": "polyhaven:Test003",
+      "tris": 10,
+      "collision": "Hull"
+    },
+    "kit_test_noid": {
+      "source": "polyhaven:Test004",
+      "tris": 5,
+      "collision": "Box"
+    },
+    "kit_test_tree": {
+      "source": "generated:tree seed=7 height=46.0",
+      "tris": 5000,
+      "remake": "python kit/tools/run.py tree kit_test_tree --seed 7 --height 46 --bark polyhaven:jolcham_oak_bark_01 --tris 16000 --tile 7"
+    }
+  },
+  "skies": {
+    "kit_test_sky": {
+      "source": "polyhaven:test_puresky",
+      "ids": {
+        "Bk": "rbxassetid://100",
+        "Dn": "rbxassetid://101",
+        "Ft": "rbxassetid://102",
+        "Lf": "rbxassetid://103",
+        "Rt": "rbxassetid://104",
+        "Up": "rbxassetid://105"
+      },
+      "sun": [
+        0.6,
+        0.3,
+        -0.74
+      ]
+    },
+    "kit_test_sky_noid": {
+      "source": "polyhaven:test_puresky",
+      "remake": "python kit/tools/run.py sky kit_test_sky_noid --from polyhaven:test_puresky --azimuth -40"
+    },
+    "kit_test_sky_half": {
+      "source": "polyhaven:test_puresky",
+      "remake": "python kit/tools/run.py sky kit_test_sky_half --from polyhaven:test_puresky --azimuth -40",
+      "ids": {
+        "Ft": "rbxassetid://102",
+        "Up": "rbxassetid://105"
+      }
+    }
+  }
+}

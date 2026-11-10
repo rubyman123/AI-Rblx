@@ -1,0 +1,17 @@
+{
+  "name": "FwjelaaSystems",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "fwjelaa": { "$path": "src/Shared" },
+      "FwjelaaConfig": { "$path": "src/Config/FwjelaaConfig.luau" }
+    },
+    "ServerScriptService": {
+      "fwjelaa": { "$path": "src/Server" },
+      "Main": { "$path": "examples/Main.server.luau" }
+    },
+    "ServerStorage": {
+      "FwjelaaSecrets": { "$path": "src/Config/FwjelaaSecrets.luau" }
+    }
+  }
+}

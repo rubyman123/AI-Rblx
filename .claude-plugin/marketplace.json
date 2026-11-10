@@ -1,0 +1,12 @@
+{
+  "name": "fwjelaa",
+  "owner": { "name": "fwjelaa" },
+  "metadata": { "description": "fwjelaa vault: a Roblox game studio for Claude Code." },
+  "plugins": [
+    {
+      "name": "fwjelaa",
+      "source": "./",
+      "description": "Roblox game studio for Claude Code: notes, skills, agents, commands and a code-check hook."
+    }
+  ]
+}

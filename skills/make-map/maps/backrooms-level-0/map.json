@@ -1,0 +1,34 @@
+{
+  "id": "backrooms-level-0",
+  "title": "Backrooms Level 0",
+  "family": "backrooms",
+  "seed": 11,
+  "lighting": "liminal",
+  "floorY": -30,
+  "spawn": [-112, 3, 112],
+  "grid": {"cells": 15, "cell": 16, "origin": [-120, 0, -120]},
+  "ceiling": 10,
+  "wall": {"thickness": 0.6, "open": 0.55, "gap": 0.4, "gapWidth": [4, 7]},
+  "materials": {"wall": "backrooms_wallpaper", "floor": "backrooms_carpet", "ceiling": "backrooms_ceiling"},
+  "colors": {"floor": "#A8946A", "ceiling": "#E8E4DA", "wall": "#B8B2A6", "baseboard": "#AE7A59", "panel": "#FFF6DF", "panelDead": "#8A8580", "outlet": "#ECE8DE"},
+  "lights": {"range": 20, "brightness": 2, "angle": 150, "color": [255, 244, 214]},
+  "pillarRoom": {"from": [9, 2], "to": [12, 5]},
+  "darkWing": {"from": [1, 8], "to": [3, 10]},
+  "hallway": {"row": 13, "from": 5, "to": 13},
+  "flicker": [[7, 7], [10, 9], [5, 3]],
+  "anomaly": [6, 6],
+  "sound": {"hum": "backrooms_hum", "volume": 0.35, "reverb": "Hallway"},
+  "pois": [
+    {"name": "pillar room", "pos": [48, 3, -64]},
+    {"name": "dark wing", "pos": [-80, 3, 32]},
+    {"name": "hallway end", "pos": [96, 3, 96]},
+    {"name": "far corner", "pos": [112, 3, -112]}
+  ],
+  "shots": [
+    {"name": "spawn_view", "cam": [-112, 5, 116], "look": [-60, 4, 60]},
+    {"name": "hallway", "cam": [-30, 5, 96], "look": [104, 4, 96]},
+    {"name": "pillar_room", "cam": [28, 5, -20], "look": [72, 3, -72]},
+    {"name": "dark_wing", "cam": [-52, 5, 24], "look": [-90, 3, 36]},
+    {"name": "anomaly", "cam": [-3, 5, -13], "look": [-6, 6.5, -24]}
+  ]
+}

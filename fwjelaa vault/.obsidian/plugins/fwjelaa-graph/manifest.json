@@ -1,0 +1,9 @@
+{
+  "id": "fwjelaa-graph",
+  "name": "fwjelaa Graph",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Colours each graph link with its note's colour group, so the fwjelaa vault graph shows rainbow threads.",
+  "author": "fwjelaa",
+  "isDesktopOnly": false
+}

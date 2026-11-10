@@ -1,0 +1,9 @@
+{
+  "name": "fwjelaa",
+  "version": "0.1.0",
+  "description": "fwjelaa vault: a Roblox game studio for Claude Code. 1,400+ notes, skills that build maps, animations, models, UI, VFX and safe gameplay code and check their own work, a game-concept debate, a council, and a Luau code-check hook.",
+  "author": {
+    "name": "fwjelaa"
+  },
+  "keywords": ["roblox", "luau", "game-development", "worldbuilding", "modeling", "studio"]
+}
